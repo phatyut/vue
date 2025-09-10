@@ -1,14 +1,27 @@
 <template>
-  <div @click="this.counter++">
-    {{counter}}
-  </div>
+      <div  :class="{mainclass:true}">
+              <div>
+                <Bindclass></Bindclass>
+              </div>
+
+      </div>
 </template>
 <script>
-export default {
-  data(){
-    return{
-      counter:0
+import Bindclass from './component/Bind/Bindclass.vue';
+  export default{
+    components:{Bindclass},
+    data(){
+      return{
+
+      }
     }
   }
-}
 </script>
+<style scoped>
+.mainclass{
+   position: relative;
+  margin: 0px;
+  border: 1px solid blue;
+  box-sizing: border-box;
+}
+</style>
