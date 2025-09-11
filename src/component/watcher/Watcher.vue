@@ -5,12 +5,7 @@
             {{ ypos }}
         </div>
 <hr>
-        <div>
-            <input type="text"> 
-        </div>
-        <div>
-            {{ showgmail }}
-        </div>
+       
     </div>
 </template>
 <script>
@@ -18,14 +13,25 @@ export default{
     data(){
         return{
             element:true,
+            inputaddress:'',
+            showgmail:'',
             xpos:0,
-            ypos:0
+            ypos:0,
+            myclass:"classelement"
         }
     },methods:{
         moveoverelement(events){
             this.xpos = events.offsetX;
             this.ypos = events.offsetY;
         }
+    },watch:{
+        inputaddress(newvalue,oldvalue){
+            if(!newvalue.includes('@')){
+                this.showgmail=" input your gmail invalid"
+            }
+        }
+        
+       
     }
 }
 </script>
@@ -38,5 +44,7 @@ export default{
     font-size: 30px;
     color: white;
     cursor: pointer;
+}.classelement{
+    color:red
 }
 </style>
