@@ -33,7 +33,7 @@
               </div> -->
 
 
-              <div>
+              <!-- <div>
                 <div>
                     <Vfor v-for="element in items" :key="element.name"
                         :name="element.name"
@@ -42,7 +42,12 @@
                     </Vfor>
                 </div>
                 <div><button @click="clicktoremove">remove</button></div>
-              </div>
+              </div> -->
+
+
+             <div>
+                <Emit></Emit>
+             </div>
 
       </div>
 </template>
@@ -55,6 +60,7 @@ import Watcher from "./component/watcher/Watcher.vue"
 import Truewatcher from './component/watcher/Truewatcher.vue';
 import Prop from "./sfc/Prop.vue";
 import Vfor from './sfc/for/Vfor.vue';
+import Emit from "./sfc/emit/Emit.vue";
   export default{
         components:{
           Bindclass,
@@ -63,7 +69,8 @@ import Vfor from './sfc/for/Vfor.vue';
           Watcher,
           Truewatcher,
           Prop,
-          Vfor
+          Vfor,
+          Emit
 
         },
     data(){

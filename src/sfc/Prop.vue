@@ -2,7 +2,7 @@
     <div :class="{classbind:bindclass}">
         <div>{{ name }}</div>
         <div>{{ des }}</div>
-        <div :class="classimg" ><img src="../images/butterfly.jpg" alt="" v-show="showmyfaverite" @click="clickonbutterfly"></div>
+        <div :class="classimg" ><img src="../images/butterfly.jpg" alt="" v-show="showmyfaverite" ></div>
         <div><button @click="clickaddimg">ADD</button></div>
     </div>
 </template>
