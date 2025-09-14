@@ -4,8 +4,12 @@ import App from './App.vue'
 import Sfc from './sfc/Prop.vue'
 import fallthrow from "../src/codepublic/fallthrow.vue"
 import Slot from './codepublic/slot/Slot.vue'
+import ScopeSlot from './codepublic/scopeslot/ScopeSlot.vue'
+import Dynamicpublic from './dynamic-public/Dynamicpublic.vue'
 const app=createApp(App);
 app.component('Sfc',Sfc);
 app.component('fallthrow',fallthrow);
 app.component('Slot',Slot)
+app.component('ScopeSlot',ScopeSlot);
+app.component("dynamicpublic",Dynamicpublic)
 app.mount('#app')

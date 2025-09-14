@@ -53,7 +53,7 @@
               <fallthrow :name="yut"></fallthrow>
              </div> -->
 
-             <div>
+             <!-- <div>
               <Slot v-for="slot in slots" :key="slot">
                   <template  #myslot> 
                     <div>{{ slot.name }}</div>
@@ -62,6 +62,23 @@
                     <img :src=slot.url alt="">
                   </template>
               </Slot>
+             </div> -->
+
+             <!-- <div>
+              <ScopeSlot v-slot="nameslot">
+                <div>
+                   {{ nameslot.slotname }},
+                </div>
+                <div>
+                  {{ nameslot.age }}
+                </div>
+                <div><img :src=nameslot.url alt=""></div>
+              </ScopeSlot>
+             </div> -->
+
+
+             <div>
+              <Dynamicpublic></Dynamicpublic>
              </div>
 
       </div>
