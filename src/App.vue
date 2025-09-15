@@ -45,13 +45,29 @@
               </div> -->
 
 
-             <div>
+             <!-- <div>
                 <Emit></Emit>
+             </div> -->
+
+             <!-- <div>
+              <fallthrow :name="yut"></fallthrow>
+             </div> -->
+
+             <div>
+              <Slot v-for="slot in slots" :key="slot">
+                  <template  #myslot> 
+                    <div>{{ slot.name }}</div>
+                    <div>{{ slot.age }}</div>
+                    <div>{{ slot.gender }}</div>
+                    <img :src=slot.url alt="">
+                  </template>
+              </Slot>
              </div>
 
       </div>
 </template>
 <script>
+import Pc from "./images/background1.jpg"
 import Butterfly from "./images/butterfly.jpg"
 import Bindclass from './component/Bind/Bindclass.vue';
 import Form from './component/form/Form.vue';
@@ -61,6 +77,7 @@ import Truewatcher from './component/watcher/Truewatcher.vue';
 import Prop from "./sfc/Prop.vue";
 import Vfor from './sfc/for/Vfor.vue';
 import Emit from "./sfc/emit/Emit.vue";
+import Fallthrow from './codepublic/fallthrow.vue';
   export default{
         components:{
           Bindclass,
@@ -70,17 +87,20 @@ import Emit from "./sfc/emit/Emit.vue";
           Truewatcher,
           Prop,
           Vfor,
-          Emit
+          Emit,
+                Fallthrow
 
         },
     data(){
       return{
         bool:true,
+        yut:"phatyut",
        items:[
         {name:"one",url:Butterfly,des:"this is a butterfly one "},
         {name:"two",url:Butterfly,des:"this is a butterfly two"},
-        {name:"three",url:Butterfly,des:"this is a butterfly three"},
-        {name:"four",url:Butterfly,des:"this is a butterfly  four"},
+       ],
+       slots:[
+        {name:"slot",age:12,gender:"male",url:Pc}
        ]
 
       }
@@ -107,4 +127,4 @@ import Emit from "./sfc/emit/Emit.vue";
 
 
 
-<!-- vue emit -->
+<!-- scope slot -->
