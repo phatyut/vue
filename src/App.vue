@@ -1,28 +1,27 @@
 <template>
-      <div  :class="{mainclass:true}">
-
-              <!-- <div>
+  <div :class="{ mainclass: true }">
+    <!-- <div>
                 <Bindclass></Bindclass>
               </div> -->
 
-              <!-- <div> <Form></Form></div> -->
+    <!-- <div> <Form></Form></div> -->
 
-              <!-- <div><Computed></Computed></div> -->
+    <!-- <div><Computed></Computed></div> -->
 
-              <div>
-                 <!-- <div>
+    <div>
+      <!-- <div>
                    <watcher></watcher>
                  </div> -->
 
-                 <!-- <div>
+      <!-- <div>
                   <Truewatcher></Truewatcher>
                  </div> -->
-              </div>
+    </div>
 
-              <!-- <div>
+    <!-- <div>
                 <Sfc></Sfc>
               </div> -->
-<!-- 
+    <!-- 
               <div>
                   <Prop 
                       name=" yut"
@@ -32,8 +31,7 @@
                 
               </div> -->
 
-
-              <!-- <div>
+    <!-- <div>
                 <div>
                     <Vfor v-for="element in items" :key="element.name"
                         :name="element.name"
@@ -44,16 +42,15 @@
                 <div><button @click="clicktoremove">remove</button></div>
               </div> -->
 
-
-             <!-- <div>
+    <!-- <div>
                 <Emit></Emit>
              </div> -->
 
-             <!-- <div>
+    <!-- <div>
               <fallthrow :name="yut"></fallthrow>
              </div> -->
 
-             <!-- <div>
+    <!-- <div>
               <Slot v-for="slot in slots" :key="slot">
                   <template  #myslot> 
                     <div>{{ slot.name }}</div>
@@ -64,7 +61,7 @@
               </Slot>
              </div> -->
 
-             <!-- <div>
+    <!-- <div>
               <ScopeSlot v-slot="nameslot">
                 <div>
                    {{ nameslot.slotname }},
@@ -76,72 +73,72 @@
               </ScopeSlot>
              </div> -->
 
+    <!-- <div>
+      <Dynamicmain></Dynamicmain>
+    </div> -->
 
-             <div>
-              <Dynamicpublic></Dynamicpublic>
-             </div>
+    <!-- <div>
+      <Binddynamic> </Binddynamic>
+    </div> -->
 
-      </div>
+    <div>
+      <Teleports></Teleports>
+    </div>
+  </div>
 </template>
 <script>
-import Pc from "./images/background1.jpg"
-import Butterfly from "./images/butterfly.jpg"
-import Bindclass from './component/Bind/Bindclass.vue';
-import Form from './component/form/Form.vue';
-import Computed from './component/computed/Comjuted.vue';
-import Watcher from "./component/watcher/Watcher.vue"
-import Truewatcher from './component/watcher/Truewatcher.vue';
+import Pc from "./images/background1.jpg";
+import Butterfly from "./images/butterfly.jpg";
+import Bindclass from "./component/Bind/Bindclass.vue";
+import Form from "./component/form/Form.vue";
+import Computed from "./component/computed/Comjuted.vue";
+import Watcher from "./component/watcher/Watcher.vue";
+import Truewatcher from "./component/watcher/Truewatcher.vue";
 import Prop from "./sfc/Prop.vue";
-import Vfor from './sfc/for/Vfor.vue';
+import Vfor from "./sfc/for/Vfor.vue";
 import Emit from "./sfc/emit/Emit.vue";
-import Fallthrow from './codepublic/fallthrow.vue';
-  export default{
-        components:{
-          Bindclass,
-          Form,
-          Computed,
-          Watcher,
-          Truewatcher,
-          Prop,
-          Vfor,
-          Emit,
-                Fallthrow
+import Fallthrow from "./codepublic/fallthrow.vue";
+import Binddynamic from "./dynamic-public/Binddynamic.vue";
 
-        },
-    data(){
-      return{
-        bool:true,
-        yut:"phatyut",
-       items:[
-        {name:"one",url:Butterfly,des:"this is a butterfly one "},
-        {name:"two",url:Butterfly,des:"this is a butterfly two"},
-       ],
-       slots:[
-        {name:"slot",age:12,gender:"male",url:Pc}
-       ]
-
-      }
-    },methods:{
-      clicktoremove(){
-        this.items.splice(1,1)
-        alert("test")
-      }
-    }
-  }
+export default {
+  components: {
+    Bindclass,
+    Form,
+    Computed,
+    Watcher,
+    Truewatcher,
+    Prop,
+    Vfor,
+    Emit,
+    Fallthrow,
+    Binddynamic,
+  },
+  data() {
+    return {
+      bool: true,
+      yut: "phatyut",
+      items: [
+        { name: "one", url: Butterfly, des: "this is a butterfly one " },
+        { name: "two", url: Butterfly, des: "this is a butterfly two" },
+      ],
+      slots: [{ name: "slot", age: 12, gender: "male", url: Pc }],
+    };
+  },
+  methods: {
+    clicktoremove() {
+      this.items.splice(1, 1);
+      alert("test");
+    },
+  },
+};
 </script>
 <style scoped>
-.mainclass{
-   position: relative;
+.mainclass {
+  position: relative;
   margin: 0px;
- 
+
   box-sizing: border-box;
 }
 </style>
-
-
-
-
-
-
 
 <!-- scope slot -->

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="{ classone: one }">
     <div>this is a component One</div>
     <div><img :src="url" alt="" :class="{ classimg: imgclass }" /></div>
     <div>
@@ -29,6 +29,7 @@ export default {
     return {
       url: Router1,
       imgclass: true,
+      one: true,
     };
   },
 };
@@ -37,5 +38,8 @@ export default {
 <style scoped>
 .classimg {
   width: 100px;
+}
+.classone {
+  background-color: blue;
 }
 </style>

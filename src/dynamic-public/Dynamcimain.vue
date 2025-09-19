@@ -1,35 +1,54 @@
 <template>
   <div>
-    <div>this is a main dynamic</div>
-    <div><button @click="clickhere++">clickme</button></div>
-    <div>
-      <KeepAlive>
-        <component :is="testcounter"></component>
+    <div>this is a Main Dynamic</div>
+    <div><button @click="clickchangepage">clickme</button></div>
+    <div :class="{ myclass: thisclass }">
+      <KeepAlive include="Dynamicone,Dynamictwo" exclude="Dynamicthree">
+        <component :is="changepage"></component>
       </KeepAlive>
     </div>
   </div>
 </template>
 <script>
+import Dynamicone from "../dynamic-public/Dynamicone.vue";
+import Dynamictwo from "../dynamic-public/Dynamictwo.vue";
+import Dynamicthree from "../dynamic-public/Dynamicthree.vue";
 export default {
+  components: { Dynamicone, Dynamicthree, Dynamictwo },
   data() {
     return {
-      clickhere: 1,
+      thisclass: true,
+      page: 1,
     };
   },
-  methods: {},
+  methods: {
+    clickchangepage() {
+      this.page++;
+    },
+  },
   computed: {
-    testcounter() {
-      if (this.clickhere === 1) {
+    changepage() {
+      if (this.page === 1) {
         return "Dynamicone";
-      } else return "Dynamictwo";
+      } else if (this.page === 2) {
+        return "Dynamictwo";
+      } else return "Dynamicthree";
     },
   },
   watch: {
-    clickhere(arr) {
-      if (arr > 2) {
-        this.clickhere == 1;
+    page(arr) {
+      if (arr > 3) {
+        this.page = 1;
       }
     },
   },
 };
 </script>
+<style scoped>
+.myclass {
+  background-color: rgba(169, 240, 216, 0.164);
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+</style>
