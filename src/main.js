@@ -9,6 +9,7 @@ import Dynamicpublic from './dynamic-public/Dynamicpublic.vue'
 import Dynamicmain from "./dynamic-public/Dynamcimain.vue"
 import Binddynamic from './dynamic-public/Binddynamic.vue'
 import Teleports from "./codepublic/teleport/Teleports.vue"
+import Httpserver from '../httpserver/Httpserver.vue'
 
 const app=createApp(App);
 app.component('Sfc',Sfc);
@@ -18,5 +19,6 @@ app.component('ScopeSlot',ScopeSlot);
 // app.component("Dynamicpublic",Dynamicpublic)
 // app.component("Dynamicmain",Dynamicmain)
 // app.component("Binddynamic",Binddynamic)\
-app.component("Teleports",Teleports)
+// app.component("Teleports",Teleports)
+app.component("Httpserver",Httpserver)
 app.mount('#app')

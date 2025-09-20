@@ -1,0 +1,7 @@
+{
+    "textjson":[
+        {"name":"numberone","age":"001","other":"..."},
+        {"name":"numbertwo","age":"002","other":".2."},
+        {"name":"numberthree","age":"003","other":".3."}   
+    ]
+}
